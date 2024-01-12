@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      .container {
+        position: absolute;
+        top: 10%;
+        left: 35%;
+      }
+      .container img {
+        position: absolute;
+        display: none;
+      }
+      #active{
+        display: block;
+      }
+      .btn{
+        position: absolute;
+        top: 55%;
+        left: 45%;
+      }
+      .btn button{
+        background-color: red;
+        height: 40px;
+        width: 80px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="/1.png" alt="" id="active"/>
+      <img src="/2.png" alt="" />
+      <img src="/3.png" alt="" />
+      <img src="/4.png" alt="" />
+      <img src="/5.png" alt="" />
+    </div>
+    <div class="btn">
+        <button>STOP</button>
+    </div> 
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+    <script src="./Lab1.js"></script>
+  </body>
+</html>

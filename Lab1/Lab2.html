@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pic{
+            width: calc(100% / 3);
+            border: 2px solid #CCC;
+            padding: 10px 15px;
+            text-align: center;
+            height: 500px;
+        }
+        p{
+            font-size: large;
+            display: none;
+            background-color: wheat;
+        }
+        img{
+            height: 300px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                <div class="pic1 pic">
+                    <img src="/1.png" alt="">
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque eum praesentium autem minima omnis. Optio facere nihil nam rem nostrum.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                </div>
+                <div class="pic2 pic">
+                    <img src="/2.png" alt="">
+                    <h2>E-Commerce</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, exercitationem et? Aut ex esse, modi nisi animi magnam cum voluptates?  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                </div>
+                <div class="pic3 pic">
+                    <img src="/3.png" alt="">
+                    <h2>SEO</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit repellat pariatur nobis obcaecati nemo facere praesentium nostrum possimus iste. Quisquam!  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+             </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('.pic').on('click',function(){
+                $(this).find('p').slideToggle(1000)
+            })
+        })
+    </script>
+</body>
+</html>
