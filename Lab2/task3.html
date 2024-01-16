@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .card {
+        width: 200px;
+        border: 2px solid #ccc;
+        margin: 30px 10px 30px;
+        padding: 10px 20px;
+      }
+      .card img {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .err {
+        display: none;
+        border: 2px solid red;
+        padding: 10px 30px;
+        width: 200px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="enter ID" />
+    <button id="search">Search</button>
+    <div class="card">
+      <img src="" alt="" />
+      <hr />
+      <h2></h2>
+      <p></p>
+    </div>
+    <p class="err">Enter a valid ID</p>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $("#search").on("click", function () {
+        let id = $("input").val();
+        $.ajax({
+          url: `https://dummyjson.com/products/${id}`,
+          success: function (product) {
+            $(".err").css("display", "none");
+            $(".card img").attr("src", product["images"][0]);
+            $(".card h2").text(product.title);
+            $(".card p").text(product.description);
+          },
+          error: function () {
+            $(".err").css("display", "block");
+          },
+        });
+        $("input").val("");
+      });
+    </script>
+  </body>
+</html>

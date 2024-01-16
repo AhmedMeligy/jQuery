@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            position: relative;
+        }
+        #drag{
+            position: absolute;
+            height: 250px;
+            width: 200px;
+            background-color: yellow;
+            cursor: grab;
+            text-align: center;
+            right: 80px;
+            top: 200px;
+        }
+        #drag img{
+            margin-top: 30px;
+        }
+        #drop{
+            background-color: black;
+            color: white;
+            font-size: 50px;
+            text-align: center;
+            height: 700px;
+            width: 700px;
+            border-radius: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="drag">
+            <img src="Screenshot 2024-01-16 074922.png" alt="">
+            <p>drag!</p>
+        </div>
+    </div>
+
+    <div id="drop">
+        <p>Black Hole</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <script>
+        $( function() {
+          $( "#drag" ).draggable({ revert: true });
+          $('#drop').droppable({
+                drop: function(event, ui) {
+                    ui.draggable.hide();
+                }
+            });
+        } );
+
+    </script>
+</body>
+</html>
